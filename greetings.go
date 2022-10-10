@@ -16,7 +16,7 @@ func Hello(name string) (string, error) {
 	if name == "" {
 		return "", errors.New("Name was empty.")
 	}
-	message := fmt.Sprintf("🍊"+randomFormat()+"version 2", name)
+	message := fmt.Sprintf("🍊"+randomFormat()+"version 5", name)
 	return message, nil
 }
 
