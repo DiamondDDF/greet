@@ -1,5 +1,6 @@
 package greetings
-import ( 
+
+import (
 	"errors"
 	"fmt"
 	"math/rand"
@@ -7,19 +8,19 @@ import (
 )
 
 // run automatically at program startup
-func init(){
+func init() {
 	rand.Seed(time.Now().UnixNano())
 }
 
 func Hello(name string) (string, error) {
-	if name ==  "" {
+	if name == "" {
 		return "", errors.New("Name was empty.")
 	}
-	message := fmt.Sprintf("🍊" + randomFormat() + "version 1", name)
+	message := fmt.Sprintf("🍊"+randomFormat()+"version 2", name)
 	return message, nil
 }
 
-func Hellos( names []string) (map[string]string, error){
+func Hellos(names []string) (map[string]string, error) {
 	messages := make(map[string]string)
 	for _, name := range names {
 		message, err := Hello(name)
@@ -31,6 +32,7 @@ func Hellos( names []string) (map[string]string, error){
 	}
 	return messages, nil
 }
+
 // randomFormat returns one of a set of greeting messages. The returned
 // message is selected at random.
 func randomFormat() string {
